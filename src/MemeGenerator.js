@@ -20,7 +20,7 @@ export default function MemeGenerator() {
 	const generateImg = (e) => {
 		e.preventDefault();
 		const randomNum = Math.floor(Math.random() * 100);
-		setRandomImg(allMemeImgs[randomNum]);
+		setRandomImg(allMemeImgs[randomNum].url);
 	};
 
 	return (
@@ -42,9 +42,9 @@ export default function MemeGenerator() {
 				/>
 				<button onClick={generateImg}>Generate</button>
 			</form>
-			<br />
+
 			<div className="meme">
-				<img src={randomImg.url} alt={randomImg.name} />
+				<img src={randomImg} alt="Random Meme" />
 				<h2 className="top">{fields.topText}</h2>
 				<h2 className="bottom">{fields.bottomText}</h2>
 			</div>
